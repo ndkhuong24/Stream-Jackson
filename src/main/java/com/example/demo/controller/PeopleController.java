@@ -55,4 +55,5 @@ public class PeopleController {
 //        model.addAttribute("totalPage", students.size() / pageSize);
         return "home/index";
     }
+
 }
