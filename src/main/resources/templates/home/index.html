@@ -13,7 +13,7 @@
 <table class="table table-bordered container">
     <thead>
     <tr>
-        <!--        <th scope="col">#</th>-->
+<!--        <th scope="col">#</th>-->
         <th scope="col">First name</th>
         <th scope="col">Last name</th>
         <th scope="col">Email</th>
@@ -31,7 +31,7 @@
     </thead>
     <tbody>
     <tr th:each="people : ${students}">
-        <!--        <td th:text="${product.id}"></td>-->
+<!--        <td th:text="${people.id}"></td>-->
         <td th:text="${people.first_name}"></td>
         <td th:text="${people.last_name}"></td>
         <td th:text="${people.email}"></td>
@@ -51,9 +51,14 @@
 <div class="d-flex justify-content-center">
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            <li class="page-item"><a th:href="@{/people(page=${currentPage - 1})}" th:class="${currentPage == 1} ? 'disabled'" th:classappend="page-link" >Previous</a></li>
-            <li class="page-item"><a th:class="page-link"><span>Page [[${currentPage}]] of [[${totalPages}]]</span></a></li>
-            <li class="page-item"><a th:href="@{/people(page=${currentPage + 1})}" th:class="${currentPage == totalPages} ? 'disabled'"  th:classappend="page-link" >Next</a></li>
+            <li class="page-item"><a th:href="@{/people(page=${currentPage - 1})}"
+                                     th:class="${currentPage == 1} ? 'disabled'" th:classappend="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a th:class="page-link"><span>Page [[${currentPage}]] of [[${totalPages}]]</span></a>
+            </li>
+            <li class="page-item"><a th:href="@{/people(page=${currentPage + 1})}"
+                                     th:class="${currentPage == totalPages} ? 'disabled'" th:classappend="page-link">Next</a>
+            </li>
         </ul>
     </nav>
 </div>
